@@ -8,5 +8,4 @@ spring:
             host: localhost
             port: 27017
             database: taskManager
-            username: admin
-            password: password
+
