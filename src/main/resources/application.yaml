@@ -1,0 +1,12 @@
+server:
+    port: 8081
+
+spring:
+    application.name: task-manager
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: taskManager
+            username: admin
+            password: password
