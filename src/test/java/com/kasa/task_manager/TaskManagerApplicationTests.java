@@ -3,7 +3,7 @@ package com.kasa.task_manager;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+@SpringBootTest(classes = TestConfig.class)
 class TaskManagerApplicationTests {
 
 	@Test
