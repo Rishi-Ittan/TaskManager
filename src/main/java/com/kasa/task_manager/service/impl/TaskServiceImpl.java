@@ -1,6 +1,6 @@
 package com.kasa.task_manager.service.impl;
 
-import com.kasa.task_manager.entity.Task;
+import com.kasa.task_manager.model.entity.Task;
 import com.kasa.task_manager.repositories.TaskRepository;
 import com.kasa.task_manager.service.TaskService;
 import lombok.RequiredArgsConstructor;
