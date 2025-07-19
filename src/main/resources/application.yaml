@@ -1,8 +1,17 @@
 server:
     port: 8081
-
 spring:
+
     application.name: task-manager
+    datasource:
+        url: jdbc:postgresql://localhost:5433/taskManager
+        username: postgres
+        password: password
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
     data:
         mongodb:
             host: localhost

@@ -1,4 +1,4 @@
-package com.kasa.task_manager.entity;
+package com.kasa.task_manager.model.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

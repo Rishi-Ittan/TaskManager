@@ -1,6 +1,6 @@
 package com.kasa.task_manager.controller;
 
-import com.kasa.task_manager.entity.Task;
+import com.kasa.task_manager.model.entity.Task;
 import com.kasa.task_manager.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
