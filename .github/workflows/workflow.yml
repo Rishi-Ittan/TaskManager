@@ -61,9 +61,8 @@ jobs:
         with:
           context: . # The build context is the current directory.
           push: false # Set to false initially, we'll push in the next step.
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/task-manager:latest # Replace 'your-spring-boot-app' with your desired image name.
-            ${{ secrets.DOCKER_USERNAME }}/task-manager:${{ github.run_number }} # Tag with a unique run number.
+          tags: ${{ secrets.DOCKER_USERNAME }}/task-manager:latest # Replace 'your-spring-boot-app' with your desired image name.
+
 
       # Step 7: Push the Docker image to Docker Hub.
       # This action pushes the built Docker image to your Docker Hub repository.
@@ -72,9 +71,7 @@ jobs:
         with:
           context: .
           push: true # Set to true to push the image.
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/task-manager:latest
-            ${{ secrets.DOCKER_USERNAME }}/task-manager:${{ github.run_number }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/task-manager:latest
           # You can add build-args here if your Dockerfile needs them, e.g.:
           # build-args: |
           #   VERSION=${{ github.run_number }}
