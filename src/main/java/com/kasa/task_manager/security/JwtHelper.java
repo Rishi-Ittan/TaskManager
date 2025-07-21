@@ -19,11 +19,11 @@ public class JwtHelper {
     private static final SecretKey SIGNING_KEY = Keys.hmacShaKeyFor(SECRET_KEY.getEncoded());
     private static final int MINUTES = 60;
 
-    public static String generateToken(String email) {
+    public static String generateToken(String username) {
         Jwts.SIG.HS256.key().build();
         var now = Instant.now();
         return Jwts.builder()
-                .subject(email)
+                .subject(username)
                 .issuedAt(Date.from(now))
                 .expiration(Date.from(now.plus(MINUTES, ChronoUnit.MINUTES)))
                 .signWith(SIGNING_KEY, Jwts.SIG.HS256)

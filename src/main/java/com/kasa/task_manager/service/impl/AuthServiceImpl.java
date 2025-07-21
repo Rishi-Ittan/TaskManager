@@ -2,7 +2,6 @@ package com.kasa.task_manager.service.impl;
 
 import com.kasa.task_manager.exception.UserException;
 import com.kasa.task_manager.model.user.LoginRequest;
-import com.kasa.task_manager.model.user.LoginResponse;
 import com.kasa.task_manager.model.user.SignupRequest;
 import com.kasa.task_manager.model.user.UserDto;
 import com.kasa.task_manager.security.JwtHelper;
@@ -22,16 +21,16 @@ public class AuthServiceImpl implements AuthService {
     private final AuthenticationManager authenticationManager;
     private final UserService userService;
     @Override
-    public LoginResponse login(LoginRequest request) {
+    public LoginRequest login(LoginRequest request) {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
             String token = JwtHelper.generateToken(request.getUsername());
-            return LoginResponse.builder()
+            return LoginRequest.builder()
                     .token(token)
                     .username(request.getUsername())
                     .build();
         } catch (BadCredentialsException e) {
-            return LoginResponse.builder()
+            return LoginRequest.builder()
                     .username(request.getUsername())
                     .message("Invalid credentials")
                     .build();
