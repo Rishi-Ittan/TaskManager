@@ -1,7 +1,6 @@
 package com.kasa.task_manager.controller;
 
 import com.kasa.task_manager.model.user.LoginRequest;
-import com.kasa.task_manager.model.user.LoginResponse;
 import com.kasa.task_manager.model.user.SignupRequest;
 import com.kasa.task_manager.model.user.UserDto;
 import com.kasa.task_manager.service.AuthService;
@@ -22,7 +21,7 @@ public class UserController {
     private final AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
+    public ResponseEntity<LoginRequest> login(@Valid @RequestBody LoginRequest request) {
         try {
             return ResponseEntity.ok(authService.login(request));
         } catch (Exception e) {

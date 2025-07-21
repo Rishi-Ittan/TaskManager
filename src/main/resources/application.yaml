@@ -1,7 +1,6 @@
 server:
     port: 8081
 spring:
-
     application.name: task-manager
     datasource:
         url: jdbc:postgresql://localhost:5433/taskManager
@@ -17,4 +16,6 @@ spring:
             host: localhost
             port: 27017
             database: taskManager
+            username: admin
+            password: password
 
